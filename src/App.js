@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom'; // Routerni olib tashlang
+import Header from './layouts/header/header';
+import Footer from './layouts/footer/footer';
+import Blog from './pages/blog';
+import Home from './pages/home'
+import About from './pages/about';
+import Hire from './pages/hire';
+import Service from './pages/service';
+import Studies from './pages/studies';
+import Works from './pages/works';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/service" element={<Service />} />
+        <Route path="/studies" element={<Studies />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/works" element={<Works />} />
+        <Route path="/hire" element={<Hire />} />
+      </Routes>
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;
